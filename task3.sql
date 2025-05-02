@@ -36,13 +36,12 @@ CREATE TABLE appliance_info (
 
 
 
-INSERT INTO novel_info VALUES
-(1, 'The Silent Patient', 'Alex Michaelides', 'Thriller', 350.00, 336, 'English', 'Yes'),
+INSERT INTO novel_info VALUES (1, 'The Silent Patient', 'Alex Michaelides', 'Thriller', 350.00, 336, 'English', 'Yes'),
 (2, 'Sapiens', 'Yuval Noah Harari', 'History', 450.00, 498, 'English', 'Yes'),
 (3, 'The Alchemist', 'Paulo Coelho', 'Fiction', 299.00, 208, 'English', 'Yes'),
 (4, '1984', 'George Orwell', 'Dystopian', 280.00, 328, 'English', 'Yes'),
 (5, 'To Kill a Mockingbird', 'Harper Lee', 'Classic', 320.00, 281, 'English', 'Yes'),
-(6, 'Atomic Habits', 'James Clear', 'Self-help', 370.00, 320, 'English', 'Yes'),
+(6, 'The Silent Patient', 'James Clear', 'Self-help', 370.00, 320, 'English', 'Yes'),
 (7, 'The Hobbit', 'J.R.R. Tolkien', 'Fantasy', 400.00, 310, 'English', 'Yes'),
 (8, 'Becoming', 'Michelle Obama', 'Biography', 420.00, 448, 'English', 'Yes'),
 (9, 'The Power of Now', 'Eckhart Tolle', 'Spiritual', 390.00, 236, 'English', 'Yes'),
@@ -60,8 +59,7 @@ INSERT INTO novel_info VALUES
 
 
 
-INSERT INTO building_info VALUES
-(1, 'Green Heights', 'A101', 'Ravi Kumar', 'Bangalore', 1, 12000.00, 'Occupied'),
+INSERT INTO building_info VALUES (1, 'Green Heights', 'A101', 'Ravi Kumar', 'Bangalore', 1, 12000.00, 'Occupied'),
 (2, 'Sky Residency', 'B204', 'Neha Sharma', 'Mumbai', 2, 0.00, 'Vacant'),
 (3, 'Sunview Towers', 'C305', 'Amit Patel', 'Delhi', 3, 15000.00, 'Occupied'),
 (4, 'Lake View', 'D402', 'Sonia Mehra', 'Pune', 4, 16000.00, 'Occupied'),
@@ -84,8 +82,7 @@ INSERT INTO building_info VALUES
 
 
 
-INSERT INTO appliance_info VALUES
-(1, 'Refrigerator', 'LG', 'Cooling', 180, 2, 4.5, 'Yes'),
+INSERT INTO appliance_info VALUES (1, 'Refrigerator', 'LG', 'Cooling', 180, 2, 4.5, 'Yes'),
 (2, 'Microwave Oven', 'Samsung', 'Cooking', 1200, 1, 4.3, 'Yes'),
 (3, 'Washing Machine', 'Whirlpool', 'Laundry', 500, 3, 4.2, 'Yes'),
 (4, 'Air Conditioner', 'Voltas', 'Cooling', 1500, 2, 4.4, 'Yes'),
@@ -145,4 +142,25 @@ SELECT * FROM novel_info WHERE genre = 'Mystery' AND pages > 300;
 SELECT * FROM building_info WHERE city IN ('Mumbai', 'Bangalore');
 SELECT * FROM appliance_info WHERE rating BETWEEN 4.0 AND 4.8;
 SELECT * FROM appliance_info WHERE appliance_id NOT BETWEEN 10 AND 15;
-UPDATE appliance SET is_smart = 0 WHERE power_watts BETWEEN 100 AND 600;
+
+
+select count(*)from novel_info;
+
+
+select count(novel_id) from novel_info;
+
+select count(*) As total_pages from novel_info;
+
+select sum(Pages) As total_pages from novel_info; 
+
+select max(title) As title from novel_info;
+
+select min(price) As total_price from novel_info;
+
+select avg(language) As language from novel_info;
+
+select max(title) As t from novel_info where title ='The Silent Patient';
+
+select sum(price) As p from novel_info group by author having p<400; 
+
+
